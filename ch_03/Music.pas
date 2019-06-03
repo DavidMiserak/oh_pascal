@@ -1,4 +1,4 @@
-program Music (input, output);
+program Music (output);
 {Illustrates scope of identfiers.}
 const SCALE = 'Bass clef '; {This is a text constant.}
 var JohnnyOneNote : char;

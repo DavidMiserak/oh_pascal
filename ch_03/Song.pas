@@ -1,4 +1,4 @@
-program Song (input, output);
+program Song (output);
 {Demonstrates declaration of procedures without parameters.}
 procedure Chorus; {Print the chorus}
 begin
