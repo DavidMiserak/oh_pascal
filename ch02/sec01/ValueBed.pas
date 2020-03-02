@@ -3,9 +3,9 @@ program ValueBed (input, output);
 procedure UseValues(First, Last: char);
 	{Uses the values passed to its parameters.}
 	begin
-		write('My arguments are: ')
+		write('My arguments are: ');
 		write(First);
-     	writeln(Last);
+     		writeln(Last);
 	end; {UseValues}
 begin
 	UseValues('D', 'C');

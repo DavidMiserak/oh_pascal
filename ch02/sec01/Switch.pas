@@ -2,7 +2,7 @@ program Switch (input, output);
 {Reverses two imput integers.}
 var First, Second: integer;
 
-procedure GetTheNumbers (var Primero, Sgundo: integer);
+procedure GetTheNumbers (var Primero, Segundo: integer);
 	{Reads values for the vasriable parameters Primero and Segundo.}
 	begin
 		write('Please enter two integers: ');
@@ -13,8 +13,8 @@ procedure SwapThem(var Primer, Duexieme: integer);
 	{Swaps the values of two variable parameters.}
 	var Temporary: integer;
 	begin
-		Temporary := Primero;  {Temporary is undefined until}
-		Primero   := Duexieme; {this assignment takes place.}
+		Temporary := Primer;   {Temporary is undefined until}
+		Primer    := Duexieme; {this assignment takes place.}
 		Duexieme  := Temporary;
 	end; {SwapThem}
 procedure PrintTheResults(Primo, Secondo: integer);

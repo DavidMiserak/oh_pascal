@@ -1,6 +1,6 @@
 program VarArg (input, output);
 {Demonstrates variable parameters.}
-var FirstInitial, SecondIntial: char;
+var FirstInitial, LastInitial: char;
 {A variable parameter's arugment must be a variable}
 procedure ReadInitials(var First, Last: char);
 	{Within this procedure, the names First and Last represent
