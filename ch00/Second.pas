@@ -5,4 +5,3 @@ begin
 	{A semicolon seperates statements.}
 	writeln ('Do I know you, or just your type?')
 end.
-

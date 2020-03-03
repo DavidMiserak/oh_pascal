@@ -1,8 +1,10 @@
 program ReadTest (input, output);
 {A test bed for learning about read and readln.}
+
 var First  : integer;
     Second : integer;
     Third  : integer;
+
 begin
 	writeln('Ready to start testing, What should I read?');
 	read(First);  {What would happen to the input shown}

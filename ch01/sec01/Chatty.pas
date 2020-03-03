@@ -9,5 +9,3 @@ begin
 	write   ('A fine romance, ');
 	writeln ('my friend, this is!')
 end.{Chatty}
-
-

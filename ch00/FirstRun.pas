@@ -3,4 +3,3 @@ program FirstRun (output);
 begin
 	writeln ('Hello. I love you.')
 end.
-

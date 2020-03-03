@@ -1,5 +1,6 @@
 program Switch (input, output);
 {Reverses two imput integers.}
+
 var First, Second: integer;
 
 procedure GetTheNumbers (var Primero, Segundo: integer);
@@ -9,6 +10,7 @@ procedure GetTheNumbers (var Primero, Segundo: integer);
 		read(Primero);
 		readln(Segundo); {Dump anything left on the input line.}
 	end; {GetTheNumbers}
+
 procedure SwapThem(var Primer, Duexieme: integer);
 	{Swaps the values of two variable parameters.}
 	var Temporary: integer;
@@ -17,6 +19,7 @@ procedure SwapThem(var Primer, Duexieme: integer);
 		Primer    := Duexieme; {this assignment takes place.}
 		Duexieme  := Temporary;
 	end; {SwapThem}
+
 procedure PrintTheResults(Primo, Secondo: integer);
 	{Prints its value paramaters}
 	begin
@@ -25,6 +28,7 @@ procedure PrintTheResults(Primo, Secondo: integer);
 		write(' and ');
 		writeln(Secondo:1);
 	end; {PrintTheResults}
+
 begin {main program}
 	GetTheNumbers(First, Second);
 	SwapThem(First, Second);
