@@ -1,4 +1,3 @@
-
 Program Wattage (input, output);
 {Demonstrates fancy arithmatic.}
 
