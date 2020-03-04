@@ -16,7 +16,7 @@ Procedure Calculate(Weight: integer; Var Watts: integer);
 	only going to be used inside the procedures.}
 
 	Const MULTIPLIER =   9;
-		EXPONENT   =   0.751;
+		EXPONENT =   0.751;
 
 	Var Temp:   real;
 
