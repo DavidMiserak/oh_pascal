@@ -7,7 +7,7 @@ clean:
 all: FirstRun.exe Second.exe
 
 FirstRun.exe: FirstRun.pas
-	$(PC) $(PFLAGS) -o$@ FirstRun.pas
+	$(PC) $(PFLAGS) -o$@ $<
 
 Second.exe: Second.pas
-	$(PC) $(PFLAGS) -o$@ Second.pas
+	$(PC) $(PFLAGS) -o$@ $<
