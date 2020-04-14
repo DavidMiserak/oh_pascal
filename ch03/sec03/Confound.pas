@@ -3,7 +3,7 @@ program Confound (input, output);
 
 var A, B, C, D: integer;
 
-procedure Confuse(C, A: integer, var B: integer);
+procedure Confuse(C, A: integer; var B: integer);
 var D: integer;
 begin
 	A := 5; B := 6; C := 7; D := 8;
