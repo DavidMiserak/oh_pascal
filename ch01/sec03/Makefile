@@ -7,8 +7,10 @@ clean:
 all: Garbage.exe Multiply.exe Trader.exe
 
 Garbage.exe: Garbage.pas
-	$(PC) $(PFLAGS) -o$@ Garbage.pas
+	$(PC) $(PFLAGS) -o$@ $< 
+
 Multiply.exe: Multiply.pas
-	$(PC) $(PFLAGS) -o$@ Multiply.pas
+	$(PC) $(PFLAGS) -o$@ $< 
+
 Trader.exe: Trader.pas
-	$(PC) $(PFLAGS) -o$@ Trader.pas
+	$(PC) $(PFLAGS) -o$@ $< 

@@ -7,8 +7,10 @@ clean:
 all: AddMe.exe AssignMe.exe Chatty.exe
 
 AddMe.exe: AddMe.pas
-	$(PC) $(PFLAGS) -o$@ AddMe.pas
+	$(PC) $(PFLAGS) -o$@ $< 
+
 AssignMe.exe: AssignMe.pas
-	$(PC) $(PFLAGS) -o$@ AssignMe.pas
+	$(PC) $(PFLAGS) -o$@ $< 
+
 Chatty.exe:  Chatty.pas
-	$(PC) $(PFLAGS) -o$@ Chatty.pas
+	$(PC) $(PFLAGS) -o$@ $< 

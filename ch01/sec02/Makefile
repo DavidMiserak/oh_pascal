@@ -7,7 +7,7 @@ clean:
 all: BugMe.exe ReadTest.exe
 
 BugMe.exe: BugMe.pas
-	$(PC) $(PFLAGS) -o$@ BugMe.pas
+	$(PC) $(PFLAGS) -o$@ $< 
 
 ReadTest.exe: ReadTest.pas
-	$(PC) $(PFLAGS) -o$@ ReadTest.pas
+	$(PC) $(PFLAGS) -o$@ $< 
