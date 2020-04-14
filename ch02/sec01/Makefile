@@ -1,6 +1,7 @@
 PC=fpc
 PFLAGS=-Miso
 
+.PHONY: clean
 clean:
 	rm -rfv *.o *.exe
 
