@@ -7,7 +7,7 @@ begin
 	while not eof do begin
 		read(Ch);
 		if not (Ch in ['0' .. '9'])
-			then NonDigit := TRUE;
+			then NonDigit := TRUE
 			else begin {Ch was a digit.}
 				NonDigit  := FALSE;
 				InANumber := TRUE;
