@@ -7,4 +7,4 @@ clean:
 all: Wattage.exe
 
 Wattage.exe: Wattage.pas
-	$(PC) $(PFLAGS) -o$@ Wattage.pas
+	$(PC) $(PFLAGS) -o$@ $<
