@@ -1,7 +1,7 @@
 program Splitter (numbers, odds, events, output);
 {Splits a file of numbers into separate odds and evens files.}
 
-var numbers odds, evens: text; {They're all files of characters...}
+var numbers, odds, evens: text; {They're all files of characters...}
     Current: integer; {...but we can read integers as through they were typed in.}
 
 begin

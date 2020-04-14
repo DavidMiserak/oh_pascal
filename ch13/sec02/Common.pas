@@ -19,6 +19,6 @@ begin
 		if Name3 < Name1 then begin readln(Third, Name3) end;
 	until (Name1 = Name2) and (Name2 = Name3);
 	{Postcondition: The current value from each file is identical.}
-	write('The common value in files First, Second, and Third is: ')
+	write('The common value in files First, Second, and Third is: ');
 	writeln(Name1); {Note that we're writing to the terminal.}
 end. {Common}

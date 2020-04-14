@@ -8,7 +8,7 @@ var OutFile: RealFileTYPE;
     Number: real;
 
 begin
-	write('Translating text (InFile) into reals (OutFile)...')
+	write('Translating text (InFile) into reals (OutFile)...');
 	reset(InFile);
 	rewrite(OutFile);
 	{All our ducks are in line, and we're ready to go.}
