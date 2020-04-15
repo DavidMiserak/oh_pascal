@@ -1,12 +1,19 @@
-function NextWork (Today: DayTYPE): WEEKday;
+Function NextWork (Today: DayTYPE): WEEKday;
 {Represents the first working day to follow Today.}
-const FIRSTworkDay = Monday;
-      LASTworkDay  = Friday;
-begin
-	if (Today >= FIRSTworkDay) and (Today < LASTworkDay) then begin
-		Today    := succ(Today); {Increment Today.}
-		NextWork := Today;
-	end
-	else begin NextWork := FIRSTworkDay end
-	{The assigned values have to be in the WEEKday subrange.}
-end; {NextWork}
+
+Const 
+  FIRSTworkDay = Monday;
+  LASTworkDay  = Friday;
+
+Begin
+  If (Today >= FIRSTworkDay) And (Today < LASTworkDay) Then
+    Begin
+      Today    := succ(Today); {Increment Today.}
+      NextWork := Today;
+    End
+  Else
+    Begin
+      NextWork := FIRSTworkDay
+    End
+{The assigned values have to be in the WEEKday subrange.}
+End; {NextWork}

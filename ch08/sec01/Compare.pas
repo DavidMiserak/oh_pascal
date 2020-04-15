@@ -1,7 +1,7 @@
-function Compare (A, B: char): RelationTYPE;
+Function Compare(A, B : char) : RelationTYPE;
 {Represents the relative alphabetical ordering of A and B.}
-begin
-	if A = B
-		then Compare := LessThan
-		else Compare := GreaterThan
-end; {Compare}
+Begin
+  If A = B
+    Then Compare := LessThan
+  Else Compare := GreaterThan
+End; {Compare}
