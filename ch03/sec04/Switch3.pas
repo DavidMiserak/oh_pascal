@@ -1,36 +1,39 @@
-program Switch3 (input, output);
+
+Program Switch3(input, output);
 {Reverses two input integers.}
 
-var First, Second: integer;
+Var 
+  First, Second : integer;
 
-procedure GetTheNumbers(var Primero, Segundo: integer);
-	{Reads values for the variable parameters Primero and Segundo.}
-	begin
-		write('Please enter two integers: ');
-		read(Primero);
-		readln(Segundo);
-	end; {GetTheNumbers}
+Procedure GetTheNumbers(Var Primero, Segundo : integer);
+ {Reads values for the variable parameters Primero and Segundo.}
+Begin
+  write('Please enter two integers: ');
+  read(Primero);
+  readln(Segundo);
+End; {GetTheNumbers}
 
-procedure SwapThem(var Primer, Deuxieme: integer);
-	{Swaps the values of two variable parameters.}
-	var Temporary: integer;
-	begin
-		Temporary := Primer;
-		Primer    := Deuxieme;
-		Deuxieme  := Temporary;
-	end; {SwapThem}
+Procedure SwapThem(Var Primer, Deuxieme : integer);
+ {Swaps the values of two variable parameters.}
 
-procedure PrintTheResults(Primero, Segundo: integer);
-	{Prints its value parameters.}
-	begin
-		write('Reversed, the numbers are ');
-		write(Primero);
-		write(' and ');
-		writeln(Segundo);
-	end; {PrintTheResults}
+Var Temporary: integer;
+Begin
+  Temporary := Primer;
+  Primer    := Deuxieme;
+  Deuxieme  := Temporary;
+End; {SwapThem}
 
-begin
-	GetTheNumbers(First, Second);
-	SwapThem(First, Second);
-	PrintTheResults(First, Second);
-end. {Switch3}
+Procedure PrintTheResults(Primero, Segundo : integer);
+ {Prints its value parameters.}
+Begin
+  write('Reversed, the numbers are ');
+  write(Primero);
+  write(' and ');
+  writeln(Segundo);
+End; {PrintTheResults}
+
+Begin
+  GetTheNumbers(First, Second);
+  SwapThem(First, Second);
+  PrintTheResults(First, Second);
+End. {Switch3}
