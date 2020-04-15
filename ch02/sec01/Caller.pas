@@ -1,27 +1,28 @@
-program Caller (input, output);
+
+Program Caller(input, output);
 {Show a sequence of procedure calls.}
 
-procedure First;
-	begin
-		writeln('In procedure First');
-	end; {First}
+Procedure First;
+Begin
+  writeln('In procedure First');
+End; {First}
 
-procedure Second;
-	begin
-		writeln('Second begins...');
-		First;
-		writeln('Second ends...');
-	end; {Second}
+Procedure Second;
+Begin
+  writeln('Second begins...');
+  First;
+  writeln('Second ends...');
+End; {Second}
 
-procedure Third;
-	begin
-		writeln('Third begins...');
-		Second;
-		writeln('Third ends...');
-	end; {Third}
+Procedure Third;
+Begin
+  writeln('Third begins...');
+  Second;
+  writeln('Third ends...');
+End; {Third}
 
-begin
-	writeln('Main program begins...');
-	Third;
-	writeln('Main program ends...');
-end. {Caller}
+Begin
+  writeln('Main program begins...');
+  Third;
+  writeln('Main program ends...');
+End. {Caller}

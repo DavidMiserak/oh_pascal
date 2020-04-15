@@ -1,16 +1,17 @@
-program ValueBed (input, output);
+
+Program ValueBed(input, output);
 {A test bed for value parameters.}
 
-procedure UseValues(First, Last: char);
-	{Uses the values passed to its parameters.}
-	begin
-		write('My arguments are: ');
-		write(First);
-     		writeln(Last);
-	end; {UseValues}
+Procedure UseValues(First, Last : char);
+ {Uses the values passed to its parameters.}
+Begin
+  write('My arguments are: ');
+  write(First);
+  writeln(Last);
+End; {UseValues}
 
-begin
-	UseValues('D', 'C');
-	UseValues('Q', 'T');
-	UseValues('&', '#'); 
-end. {ValueBed}
+Begin
+  UseValues('D', 'C');
+  UseValues('Q', 'T');
+  UseValues('&', '#');
+End. {ValueBed}
