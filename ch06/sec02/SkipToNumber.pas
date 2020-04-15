@@ -1,10 +1,13 @@
-procedure SkipToNumber (var TheNumber: real)
+Procedure SkipToNumber(Var TheNumber : real)
 {Returns the real value that follows a dollar sign.}
-var OneCharacter: char;
-begin
-	repeat
-		read(OneCharacter);
-	until OneCharacter = '$';
-	{Postcondition: OneCharater equals '$', so we're abount to read a number.}
-	read(TheNumber);
-end; {SkipToNumber}
+
+Var 
+  OneCharacter : char;
+
+Begin
+  Repeat
+    read(OneCharacter);
+  Until OneCharacter = '$';
+ {Postcondition: OneCharater equals '$', so we're abount to read a number.}
+  read(TheNumber);
+End; {SkipToNumber}

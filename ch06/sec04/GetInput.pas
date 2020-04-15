@@ -1,11 +1,11 @@
-procedure GetInput(var Value: integer; Lower, Upper: integer);
+Procedure GetInput(Var Value : integer; Lower, Upper : integer);
 {Gets and returns a Value between Lower and Upper, inclusive.}
-begin
-	repeat {until Value is in the proper range}
-		readln(Value);
-		if Value < Lower
-			then writeln('That''s too small. Try again.');
-			else if Value > Upper
-				then writeln('That''s too large. Try again.')
-	until (Value >= Lower) and (Value <= Upper);
-end; {GetIUnput}
+Begin
+  Repeat {until Value is in the proper range}
+    readln(Value);
+    If Value < Lower
+      Then writeln('That''s too small. Try again.');
+    Else If Value > Upper
+           Then writeln('That''s too large. Try again.')
+  Until (Value >= Lower) And (Value <= Upper);
+End; {GetIUnput}
