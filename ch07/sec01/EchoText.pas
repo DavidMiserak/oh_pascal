@@ -1,15 +1,23 @@
-program EchoText(input, output);
+
+Program EchoText(input, output);
 {Reads an echoes text input while preserving line structure.}
-var Ch: char;
-begin
-	writeln('Type in a few lines for me to echo.');
-	while not eof do begin
-		if eoln then begin {Deal with the end-of-line}
-			readln;        {Dump the remainder of the line.}
-			writeln;       {Print a carriage return.}
-		end else begin     {Deal with an ordinary character.}
-			read(Ch);
-			write(Ch);
-		end; {if}
-	end; {while}
-end. {EchoText}
+
+Var 
+  Ch : char;
+
+Begin
+  writeln('Type in a few lines for me to echo.');
+  While Not eof Do
+    Begin
+      If eoln Then
+        Begin {Deal with the end-of-line}
+          readln;        {Dump the remainder of the line.}
+          writeln;       {Print a carriage return.}
+        End
+      Else
+        Begin     {Deal with an ordinary character.}
+          read(Ch);
+          write(Ch);
+        End; {if}
+    End; {while}
+End. {EchoText}

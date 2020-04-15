@@ -1,10 +1,14 @@
-program EchoBug (input, output);
+
+Program EchoBug(input, output);
 {Reads and echoes text input, but mishandles the end-of-line.}
-var Ch: char;
-begin
-	writeln('Types in a few lines for me to echo.');
-	while not eof do begin {eof means end-of-file. It's unpronunceable.}
-		read(Ch);          {Read one character.}
-		write(Ch);         {Print the character.}
-	end; {while}
-end. {EchoBug}
+
+Var 
+  Ch : char;
+Begin
+  writeln('Types in a few lines for me to echo.');
+  While Not eof Do
+    Begin {eof means end-of-file. It's unpronunceable.}
+      read(Ch);          {Read one character.}
+      write(Ch);         {Print the character.}
+    End; {while}
+End. {EchoBug}
