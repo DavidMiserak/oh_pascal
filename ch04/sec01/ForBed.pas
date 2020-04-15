@@ -1,15 +1,21 @@
-program ForBed(input, output);
+
+Program ForBed(input, output);
 {A test bed for trying out for loops.}
-var Outer, Middle, Inner: integer;
-begin 
-	for Outer  := 1 to 5 do begin
-		for Middle := 1 to 5 do begin
-			for Inner  := 1 to 5 do begin
-				write  (Outer : 5);
-				write  (Middle:5);
-				write  (Inner : 5);
-				writeln(' Wow, am I getting dizy!');
-			end
-		end
-	end
-end. {ForBed}
+
+Var 
+  Outer, Middle, Inner : integer;
+Begin
+  For Outer  := 1 To 5 Do
+    Begin
+      For Middle := 1 To 5 Do
+        Begin
+          For Inner  := 1 To 5 Do
+            Begin
+              write  (Outer : 5);
+              write  (Middle:5);
+              write  (Inner : 5);
+              writeln(' Wow, am I getting dizy!');
+            End
+        End
+    End
+End. {ForBed}
