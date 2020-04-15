@@ -5,7 +5,7 @@ PFLAGS=-Miso
 clean:
 	rm -rfv *.o *.exe
 
-all: AddAWord.exe Decode.exe InOrder.exe InspectTree.exe
+all: 
 
 AddAWord.exe: AddAWord.pas
 	$(PC) $(PFLAGS) -o$@ $<
