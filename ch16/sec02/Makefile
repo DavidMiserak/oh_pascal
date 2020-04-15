@@ -5,7 +5,7 @@ PFLAGS=-Miso
 clean:
 	rm -rfv *.o *.exe
 
-all: Permute.exe Quicksort.exe Threader.exe
+all: Permute.exe Threader.exe
 
 Permute.exe: Permute.pas
 	$(PC) $(PFLAGS) -o$@ $<
