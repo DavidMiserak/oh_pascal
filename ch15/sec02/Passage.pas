@@ -1,29 +1,32 @@
-program Passage (input, output);
+
+Program Passage(input, output);
 {Demonstrates some effects of passing a pointer as a value parameter.}
 
-type NodePOINT = ^ NodeTYPE;
-	 NodeTYPE = record
-	 	Next: NodePOINT;
-	 	Data: char;
-	 end;
+Type 
+  NodePOINT = ^NodeTYPE;
+  NodeTYPE  = Record
+    Next: NodePOINT;
+    Data: char;
+  End;
 
-var CurrentPtr: NodePOINT;
+Var 
+  CurrentPtr : NodePOINT;
 
-procedure Change(TempPtr: NodePOINT);
-	begin
-		TempPtr^.Data := 'C'    ; {Which of these are}
-		TempPtr := TempPtr^.Next; {local assignments?}
-		TempPtr^.Data := 'D';
-	end; {Change}
+Procedure Change(TempPtr : NodePOINT);
+Begin
+  TempPtr^.Data := 'C'    ; {Which of these are}
+  TempPtr       := TempPtr^.Next; {local assignments?}
+  TempPtr^.Data := 'D';
+End; {Change}
 
-begin
-	new(CurrentPtr);
-	CurrentPtr^.Data := 'A';
-	new(CurrentPtr^.Next);
-	CurrentPtr^.Next^.Data := 'B';
-	write(CurrentPtr^.Data);
-	write(CurrentPtr^.Next^.Data);
-	Change(CurrentPtr);
-	write(CurrentPtr^.Data);
-	writeln(CurrentPtr^.Next^.Data);
-end. {Passage}
+Begin
+  new(CurrentPtr);
+  CurrentPtr^.Data := 'A';
+  new(CurrentPtr^.Next);
+  CurrentPtr^.Next^.Data := 'B';
+  write(CurrentPtr^.Data);
+  write(CurrentPtr^.Next^.Data);
+  Change(CurrentPtr);
+  write(CurrentPtr^.Data);
+  writeln(CurrentPtr^.Next^.Data);
+End. {Passage}

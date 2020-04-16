@@ -1,20 +1,23 @@
-program NodeBed (input, output);
+
+Program NodeBed(input, output);
 {A test bed for your basic node.}
 
-type NodePTR = ^ NodeTYPE;
-	 NodeTYPE = record
-	 	Letter: char;
-	 	Next: NodePTR;
-	 end;
+Type 
+  NodePTR  = ^NodeTYPE;
+  NodeTYPE = Record
+    Letter : char;
+    Next   : NodePTR;
+  End;
 
-var FirstPtr, CurrentPtr: NodePTR;
+Var 
+  FirstPtr, CurrentPtr : NodePTR;
 
-begin
-	new (FirstPtr);
-	CurrentPtr := FirstPtr;
-	FirstPtr^.Letter := 'A';
-	new(FirstPtr^.Next);
-	CurrentPtr := CurrentPtr^.Next;
-	CurrentPtr^.Letter := 'B';
-	CurrentPtr^.Next := Nil;
-end. {NodeBed}
+Begin
+  new (FirstPtr);
+  CurrentPtr       := FirstPtr;
+  FirstPtr^.Letter := 'A';
+  new(FirstPtr^.Next);
+  CurrentPtr         := CurrentPtr^.Next;
+  CurrentPtr^.Letter := 'B';
+  CurrentPtr^.Next   := Nil;
+End. {NodeBed}
