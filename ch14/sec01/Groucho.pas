@@ -1,20 +1,26 @@
-program Groucho (input, output);
+
+Program Groucho(input, output);
 {Spots values in a set of 'secret' letters.}
 
-type Letterset = set of char;
-var Secret: Letterset;
-    Ch: char;
+Type 
+  Letterset = set Of char;
 
-begin
-	{Begin by initializing the Secret set variable.}
-	Secret := ['g', 'r', 'o', 'u', 'c', 'h'{, 'o'}];
-	{Then' try to prompt some input.}
-	writeln('Try to guess the secret letters. Start typing.');
-	while not eoln do begin
-		read(Ch);
-		if Ch in Secret then begin
-			write('Beep!! ');
-		end
-	end; {while}
-	writeln;
-end. {Groucho}
+Var 
+  Secret : Letterset;
+  Ch     : char;
+
+Begin
+ {Begin by initializing the Secret set variable.}
+  Secret := ['g', 'r', 'o', 'u', 'c', 'h'{, 'o'}];
+ {Then' try to prompt some input.}
+  writeln('Try to guess the secret letters. Start typing.');
+  While Not eoln Do
+    Begin
+      read(Ch);
+      If Ch In Secret Then
+        Begin
+          write('Beep!! ');
+        End
+    End; {while}
+  writeln;
+End. {Groucho}

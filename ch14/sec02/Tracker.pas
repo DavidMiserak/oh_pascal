@@ -1,36 +1,45 @@
-program Tracker (input, output);
+
+Program Tracker(input, output);
 {Uses sets to find which letters do and don't appear in a text sample.}
 
-type CharSetTYPE = set of char;
+Type 
+  CharSetTYPE = set Of char;
 
-var Current: char;
-    IncludedLetters, MissingLetters: CharSetTYPE;
+Var 
+  Current                         : char;
+  IncludedLetters, MissingLetters : CharSetTYPE;
 
-begin
-	writeln('Type in a line of your wide randing vocabulary.');
-	{Initialization}
-	IncludedLetters := [];
-	MissingLetters := ['A' .. 'Z'];
-	{Update}
-	while not eoln do begin
-		read(Current);
-		IncludedLetters := IncludedLetters + [Current];
-		MissingLetters  := MissingLetters  - [Current];
-	end; {while}
-	{Inspection}
-	writeln('Lower-case letters included were:');
-	for Current := 'a' to 'z' do begin
-		if Current in IncludedLetters then begin
-			write(Current);
-		end
-	end; {for}
-	writeln;
-	{Inspection}
-	write('Upper-case letters not included were:'); writeln;
-	for Current := 'A' to 'Z' do begin
-		if Current in MissingLetters then begin
-			write(Current);
-		end
-	end; {for}
-	writeln;
-end. {Tracker}
+Begin
+  writeln('Type in a line of your wide randing vocabulary.');
+ {Initialization}
+  IncludedLetters := [];
+  MissingLetters := ['A' .. 'Z'];
+ {Update}
+  While Not eoln Do
+    Begin
+      read(Current);
+      IncludedLetters := IncludedLetters + [Current];
+      MissingLetters  := MissingLetters  - [Current];
+    End; {while}
+ {Inspection}
+  writeln('Lower-case letters included were:');
+  For Current := 'a' To 'z' Do
+    Begin
+      If Current In IncludedLetters Then
+        Begin
+          write(Current);
+        End
+    End; {for}
+  writeln;
+ {Inspection}
+  write('Upper-case letters not included were:');
+  writeln;
+  For Current := 'A' To 'Z' Do
+    Begin
+      If Current In MissingLetters Then
+        Begin
+          write(Current);
+        End
+    End; {for}
+  writeln;
+End. {Tracker}
