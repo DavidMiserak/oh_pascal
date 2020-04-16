@@ -1,78 +1,99 @@
-program Dutch (input, output);
+
+Program Dutch(input, output);
 {A test harness for a solution to the Dutch Flag problem.}
 
-const LIMIT = 15; {Size of the flag.}
-      DEBUGGING = TRUE; {Controls a call of Print in FlagSort}
+Const
+  LIMIT     = 15;   {Size of the flag.}
+  DEBUGGING = TRUE; {Controls a call of Print in FlagSort}
 
-type ColorTYPE = (red, white, blue);
-     FlagTYPE = array[1 .. LIMIT] of ColorTYPE;
+Type
+  ColorTYPE = (red, white, blue);
+  FlagTYPE  = array[1 .. LIMIT] Of ColorTYPE;
 
-var Flag: FlagTYPE;
+Var
+  Flag : FlagTYPE;
 
-procedure Initialize (var Flag: FlagTYPE);
-	{A truly simple-minded procedure that initialized the flag.}
-	var i: integer;
-	begin
-		for i := 1 to (LIMIT div 3) do begin
-			Flag[(3 * i) - 2] := red; {Alternate red, white, and blue.}
-			Flag[(3 * i) - 1] := white;
-			Flag[(3 * i)] := blue;
-		end
-	end; {Initialize}
+Procedure Initialize(Var Flag : FlagTYPE);
+ {A truly simple-minded procedure that initialized the flag.}
 
-procedure PrintFlag (Flag: FlagTYPE);
-	{Displays the content of the Flag array.}
-	var Count: integer;
-	begin
-		for Count := 1 to LIMIT do begin
-			case Flag[Count] of
-				red: write('R ');
-				white: write('W ');
-				blue: write('B ');
-			end; {case}
-		end; {for}
-		writeln;
-	end; {PrintFlag}
+Var
+  i : integer;
 
-procedure FlagSort (var Flag: FlagTYPE);
-	{Sorts and array of mixed red, white, and blue values.}
-	var RedBorder, WhiteBorder, BlueBorder: integer;
+Begin
+  For i := 1 To (LIMIT Div 3) Do
+    Begin
+      Flag[(3 * i) - 2] := red; {Alternate red, white, and blue.}
+      Flag[(3 * i) - 1] := white;
+      Flag[(3 * i)]     := blue;
+    End
+End; {Initialize}
 
-	procedure Swap(var First, Second: ColorTYPE);
-		{Exchanges two component values.}
-		var Temp: ColorTYPE;
-		begin
-			Temp := First; First := Second; Second := Temp;
-		end; {Swap}
+Procedure PrintFlag(Flag : FlagTYPE);
+ {Displays the content of the Flag array.}
 
-	begin {FlagSort}
-		RedBorder   := 0;
-		WhiteBorder := 1;
-		BlueBorder  := LIMIT + 1;
-		repeat
-			case Flag[WhiteBorder] of
-				white: WhiteBorder := WhiteBorder + 1;
-				red:
-					begin
-						RedBorder := RedBorder + 1;
-						Swap(Flag[RedBorder], Flag[WhiteBorder]);
-						WhiteBorder := WhiteBorder + 1;
-					end;
-				blue:
-					begin
-						BlueBorder := BlueBorder - 1;
-						Swap(Flag[WhiteBorder], Flag[BlueBorder]);
-					end
-			end; {case}
-			if DEBUGGING then begin PrintFlag(Flag) end
-		until WhiteBorder = BlueBorder;
-	end; {FlagSort}
+Var
+  Count : integer;
 
-begin {main program}
-	writeln('Initial flag is:');
-	Initialize(Flag);
-	PrintFlag(Flag);
-	writeln;
-	FlagSort(Flag);
-	writeln('Flag sort complete.')
-end. {Dutch}
+Begin
+  For Count := 1 To LIMIT Do
+    Begin
+      Case Flag[Count] Of 
+        red: write('R ');
+        white: write('W ');
+        blue: write('B ');
+      End; {case}
+    End; {for}
+  writeln;
+End; {PrintFlag}
+
+Procedure FlagSort(Var Flag : FlagTYPE);
+ {Sorts and array of mixed red, white, and blue values.}
+
+Var
+  RedBorder, WhiteBorder, BlueBorder : integer;
+
+Procedure Swap(Var First, Second : ColorTYPE);
+  {Exchanges two component values.}
+
+Var Temp : ColorTYPE;
+
+Begin
+  Temp   := First;
+  First  := Second;
+  Second := Temp;
+End; {Swap}
+
+Begin {FlagSort}
+  RedBorder   := 0;
+  WhiteBorder := 1;
+  BlueBorder  := LIMIT + 1;
+  Repeat
+    Case Flag[WhiteBorder] Of 
+      white: WhiteBorder := WhiteBorder + 1;
+      red:
+           Begin
+             RedBorder := RedBorder + 1;
+             Swap(Flag[RedBorder], Flag[WhiteBorder]);
+             WhiteBorder := WhiteBorder + 1;
+           End;
+      blue:
+            Begin
+              BlueBorder := BlueBorder - 1;
+              Swap(Flag[WhiteBorder], Flag[BlueBorder]);
+            End
+    End; {case}
+    If DEBUGGING Then
+      Begin
+        PrintFlag(Flag)
+      End
+  Until WhiteBorder = BlueBorder;
+End; {FlagSort}
+
+Begin {main program}
+  writeln('Initial flag is:');
+  Initialize(Flag);
+  PrintFlag(Flag);
+  writeln;
+  FlagSort(Flag);
+  writeln('Flag sort complete.')
+End. {Dutch}

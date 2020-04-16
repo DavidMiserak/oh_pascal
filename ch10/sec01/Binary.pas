@@ -1,17 +1,20 @@
-procedure Binary (Data: PhraseTYPE; Letter: char; var Position: integer);
-	{Binary search for Letter. Return Position = -1 if not found.}
-	var Middle, Lower, Upper: integer;
-	begin
-		Lower := 1;
-		Upper := MAX;
-		repeat
-			Middle := (Lower + Upper) div 2;
-			if Letter < Data[Middle]
-				then Upper := Middle - 1
-				else Lower := Middle + 1
-		until (Data[Middle] = Letter) or (Lower > Upper);
-		{Postcondition: If Data[Middle] isn't Letter, no component is.}
-		if Data[Middle] = Letter
-			then Position := Middle
-			else Position := -1
-	end; {Binary}
+Procedure Binary(Data : PhraseTYPE; Letter : char; Var Position : integer);
+ {Binary search for Letter. Return Position = -1 if not found.}
+
+Var 
+  Middle, Lower, Upper : integer;
+
+Begin
+  Lower := 1;
+  Upper := MAX;
+  Repeat
+    Middle := (Lower + Upper) Div 2;
+    If Letter < Data[Middle]
+      Then Upper := Middle - 1
+    Else Lower := Middle + 1
+  Until (Data[Middle] = Letter) Or (Lower > Upper);
+  {Postcondition: If Data[Middle] isn't Letter, no component is.}
+  If Data[Middle] = Letter
+    Then Position := Middle
+  Else Position := -1
+End; {Binary}
