@@ -1,5 +1,9 @@
-program DoesntRewrite(OutsideFile, output);
-var OutsideFile: text;
-begin
-	writeln(OutsideFile, 'Hi there!');
-end. {DoesntRewrite}
+
+Program DoesntRewrite(OutsideFile, output);
+
+Var 
+  OutsideFile : text;
+
+Begin
+  writeln(OutsideFile, 'Hi there!');
+End. {DoesntRewrite}
