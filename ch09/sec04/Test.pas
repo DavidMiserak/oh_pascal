@@ -1,9 +1,12 @@
-program Test(input, output);
 
-type TwoTYPE = array[1..5], [1..10] of integer;
+Program Test(input, output);
+
+Type 
+  TwoTYPE = array[1..5], [1..10] Of integer;
 {Can you see the syntax bug yet?}
 
-var TwoArray: TwoTYPE;
+Var 
+  TwoArray: TwoTYPE;
 
-begin
-end. {Test}
+Begin
+End. {Test}

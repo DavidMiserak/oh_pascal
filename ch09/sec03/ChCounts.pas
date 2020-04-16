@@ -1,59 +1,71 @@
-program ChCount (input, output);
+
+Program ChCount(input, output);
 {Count input characters, print relative frequency of lower-case letters.}
 
-type CountTYPE = array[char] of integer;
+Type 
+  CountTYPE = array[char] Of integer;
 
-var CountArray: CountTYPE; {CountArray holds the character counts.}
-    Ch: char;             {Ch holds the current input character.}
-    Total,                {Total counts the total number of letters.}
-    LineCount: integer;   {LineCount helps produce neat output.}
+Var 
+  CountArray : CountTYPE; {CountArray holds the character counts.}
+  Ch         : char;      {Ch holds the current input character.}
+  Total,                  {Total counts the total number of letters.}
+  LineCount  : integer;   {LineCount helps produce neat output.}
 
-procedure Initialize (var CountArray: CountTYPE);
+Procedure Initialize(Var CountArray : CountTYPE);
 {Initalized the CountTYPE structure.}
-var Position: char;
-begin
-	for Position := chr(0) to chr(127) do begin
-		CountArray[Position] := 0;
-	end;
-end; {Initialize}
 
-procedure CountData(var CountArray: CountTYPE; Ch: char);
+Var 
+  Position : char;
+
+Begin
+  For Position := chr(0) To chr(127) Do
+    Begin
+      CountArray[Position] := 0;
+    End;
+End; {Initialize}
+
+Procedure CountData(Var CountArray : CountTYPE; Ch : char);
 {Count the appearance of a character.}
-begin
-	CountArray[Ch] := CountArray[Ch] + 1;
-end; {CountData}
+Begin
+  CountArray[Ch] := CountArray[Ch] + 1;
+End; {CountData}
 
-function CountWas(CountArray: CountTYPE; Ch: char): integer;
+Function CountWas(CountArray : CountTYPE; Ch : char) : integer;
 {Returns the number of times Ch was counted.}
-begin
-	CountWas := CountArray[Ch];
-end; {CountWas}
+Begin
+  CountWas := CountArray[Ch];
+End; {CountWas}
 
-begin {ChCount}
-	{the initialization segment}
-	writeln('Counting letter frequencies...');
-	Total := 0;
-	Initialize(CountArray);
+Begin {ChCount}
+ {the initialization segment}
+  writeln('Counting letter frequencies...');
+  Total := 0;
+  Initialize(CountArray);
 
-	{The processing segment}
-	while not eof do begin
-	{Count appearances of all available characters.}
-		read(Ch);
-		CountData(CountArray, Ch);
-		Total := Total + 1;
-	end; {while}
-	{We know individual and overall character counts.}
+ {The processing segment}
+  While Not eof Do
+    Begin
+ {Count appearances of all available characters.}
+      read(Ch);
+      CountData(CountArray, Ch);
+      Total := Total + 1;
+    End; {while}
+ {We know individual and overall character counts.}
 
-	{the results segment}
-	writeln('Lower-case frequencies (among all input characters):');
-	LineCount := 1;
-	for Ch := 'a' to 'z' do begin {Print the output table.}
-		write(Ch);
-		write(' = ');
-		write (100.0 * (CountWas(CountArray, Ch)/Total): 4:2);
-		write('% ');
-		if (LineCount mod 5) = 0 then begin writeln end;
-		LineCount := LineCount + 1; {Newline after every fifth character.}
-	end; {for}
-	writeln;
-end. {ChCount}
+ {the results segment}
+  writeln('Lower-case frequencies (among all input characters):');
+  LineCount := 1;
+  For Ch := 'a' To 'z' Do
+    Begin {Print the output table.}
+      write(Ch);
+      write(' = ');
+      write (100.0 * (CountWas(CountArray, Ch)/Total): 4: 2);
+      write('% ');
+      If (LineCount Mod 5) = 0 Then
+        Begin
+          writeln
+        End;
+      LineCount := LineCount + 1; {Newline after every fifth character.}
+    End; {for}
+  writeln;
+End. {ChCount}

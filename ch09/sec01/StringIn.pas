@@ -1,22 +1,27 @@
-program StringIn (input, output);
+
+Program StringIn(input, output);
 {Demonstates Standard Pascal string input.}
 
-const LIMIT = 15; {The maximum string length.}
-      BLANK = '               '; {Fifteen blanks.}
+Const 
+  LIMIT = 15;                {The maximum string length.}
+  BLANK = '               '; {Fifteen blanks.}
 
-type StringType = packed Array [1 .. LIMIT] of char;
+Type 
+  StringType = packed Array [1 .. LIMIT] Of char;
 
-var Element: StringType;
-    Current: integer;
+Var 
+  Element : StringType;
+  Current : integer;
 
-begin
-	Element := BLANK; {Initalize the string array.}
-	Current := 0;
-	writeln('Please typoe in the name of your favorite element.');
-	while (input ^ > ' ') and (Current <= LIMIT) do begin
-		Current := Current + 1;
-		read(Element[Current]);
-	end; {while}
-	write('Few elements are as laid back as ');
-	writeln(Element);
-end. {StringIn}
+Begin
+  Element := BLANK; {Initalize the string array.}
+  Current := 0;
+  writeln('Please typoe in the name of your favorite element.');
+  While (input ^ > ' ') And (Current <= LIMIT) Do
+    Begin
+      Current := Current + 1;
+      read(Element[Current]);
+    End; {while}
+  write('Few elements are as laid back as ');
+  writeln(Element);
+End. {StringIn}
