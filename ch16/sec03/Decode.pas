@@ -1,22 +1,24 @@
-procedure Decode(RootPtr: NextNodePOINT);
+Procedure Decode(RootPtr : NextNodePOINT);
 {Decodes Morse code input. Each full letter must be followed by a blink.}
 
-var
-   CurrentPtr	  : NextNodePOINT;
-   InputCharacter : char;
+Var 
+  CurrentPtr     : NextNodePOINT;
+  InputCharacter : char;
 
-begin
-   CurrentPtr := RootPtr;
-   while not eof do begin
+Begin
+  CurrentPtr := RootPtr;
+  While Not eof Do
+    Begin
       read(InputCharacter);
-      case InputCharacter of
-	'.' : CurrentPtr := CurrentPtr^.Dot;
-	'-' : CurrentPtr := CurrentPtr^.Dash;
-	' ' : begin
-	   write(CurrentPtr^.Letter);
-	   CurrentPtr := RootPtr;
-	end
-      end {case}
-   end; {while}
-   writeln;
-end; {Decode}
+      Case InputCharacter Of 
+        '.' : CurrentPtr := CurrentPtr^.Dot;
+        '-' : CurrentPtr := CurrentPtr^.Dash;
+        ' ' :
+              Begin
+                write(CurrentPtr^.Letter);
+                CurrentPtr := RootPtr;
+              End
+      End {case}
+    End; {while}
+  writeln;
+End; {Decode}

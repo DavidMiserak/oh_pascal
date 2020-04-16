@@ -1,14 +1,16 @@
-procedure InspectTree(CurrentPtr: NodePOINT);
+Procedure InspectTree(CurrentPtr : NodePOINT);
 {Visits every node of a non-empty binary tree.}
 
-begin
-   if CurrentPtr^.LeftPtr <> nil then begin
+Begin
+  If CurrentPtr^.LeftPtr <> Nil Then
+    Begin
       InspectTree(CurrentPtr^.LeftPtr);
-   end;
+    End;
 
-   if CurrentPtr^.RightPtr <> nil then begin
+  If CurrentPtr^.RightPtr <> Nil Then
+    Begin
       InspectTree(CurrentPtr^.RightPtr);
-   end;
+    End;
 
-   write(CurrentPtr^.Data);
-end; {InspectTree}
+  write(CurrentPtr^.Data);
+End; {InspectTree}

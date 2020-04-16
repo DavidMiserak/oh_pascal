@@ -1,70 +1,82 @@
-program Thread (input, output);
+
+Program Thread (input, output);
 {Recursively finds and prints all exit paths from a maze.}
 
-const
-   MAXROW    = 12;
-   MAXCOL    = 12;
-   OPEN	     = ' ';
-   THEWAYOUT = 's';
+Const 
+  MAXROW    = 12;
+  MAXCOL    = 12;
+  OPEN      = ' ';
+  THEWAYOUT = 's';
 
-type ArrayTYPE = array[1..MAXROW,1..MAXCOL] of char;
+Type 
+  ArrayTYPE = array[1..MAXROW,1..MAXCOL] Of char;
 
-var Maze: ArrayTYPE;
+Var 
+  Maze : ArrayTYPE;
 
-procedure StoreTheMaze (var Maze : ArrayTYPE);
+Procedure StoreTheMaze(Var Maze : ArrayTYPE);
 {Reads in the maze.}
 
-var i, j: integer;
+Var 
+  i, j : integer;
 
-begin
-   for i := 1 to MAXROW do begin
-      for j := 1 to MAXCOL do begin
-	 read(Maze[i,j]);
-      end;
+Begin
+  For i := 1 To MAXROW Do
+    Begin
+      For j := 1 To MAXCOL Do
+        Begin
+          read(Maze[i,j]);
+        End;
       readln; {Get rid of the end-of-line.}
-   end
-end; {StoreTheMaze}
+    End
+End; {StoreTheMaze}
 
-procedure PrintTheMaze(Maze : ArrayTYPE);
+Procedure PrintTheMaze(Maze : ArrayTYPE);
 {Print the maze contens, shows the exit path}
 
-var i, j: integer;
+Var i, j: integer;
 
-begin
-   for i := 1 to MAXROW do begin
-      for j := 1 to MAXCOL do begin
-	 read(Maze[i,j]);
-      end;
+Begin
+  For i := 1 To MAXROW Do
+    Begin
+      For j := 1 To MAXCOL Do
+        Begin
+          read(Maze[i,j]);
+        End;
       readln; {Space between solutions}
-   end
-end; {PrintTheMaze}
+    End
+End; {PrintTheMaze}
 
-function AtAnExit(Row, Col : integer): boolean;
+Function AtAnExit(Row, Col : integer): boolean;
 {Tells whether or not we are on the border of the maze.}
 
-begin
-   AtAnExit := (Row = 1) or (Row = MAXROW) or (Col = 1) or (Col = MAXCOL);
-end; {AtAnExit}
+Begin
+  AtAnExit := (Row = 1) Or (Row = MAXROW) Or (Col = 1) Or (Col = MAXCOL);
+End; {AtAnExit}
 
-procedure Explore (Maze	: ArrayTYPE; Row, Col: integer);
+Procedure Explore (Maze : ArrayTYPE; Row, Col: integer);
 {Recursive procedure for searching the maze.}
 
-begin
-   Maze[Row, Col] := THEWAYOUT;
-   if AtAnExit(Row, Col) then PrintTheMaze(Maze)
-      else begin {inpect the possible pathways}
-	 {up}    if Maze[Row-1,Col] = OPEN then Explore(Maze, Row-1, Col);
-	 {right} if Maze[Row,Col+1] = OPEN then Explore(Maze, Row, Col+1);
-	 {down}  if Maze[Row+1,Col] = OPEN then Explore(Maze, Row+1, Col);
-	 {left}  if Maze[Row,Col-1] = OPEN then Explore(Maze, Row, Col-1);
-      end {else}
-end; {Explore}
+Begin
+  Maze[Row, Col] := THEWAYOUT;
+  If AtAnExit(Row, Col) Then PrintTheMaze(Maze)
+  Else
+    Begin {inpect the possible pathways}
+  {up}
+      If Maze[Row-1,Col] = OPEN Then Explore(Maze, Row-1, Col);
+  {right}
+      If Maze[Row,Col+1] = OPEN Then Explore(Maze, Row, Col+1);
+  {down}
+      If Maze[Row+1,Col] = OPEN Then Explore(Maze, Row+1, Col);
+  {left}
+      If Maze[Row,Col-1] = OPEN Then Explore(Maze, Row, Col-1);
+    End {else}
+End; {Explore}
 
-begin
-   writeln('Reading the starting maze.');
-   StoreTheMaze(Maze);
-   writeln;
-   writeln('Solution to the maze are:');
-   Explore(Maze, 6, 6); {Start searching from the center.}
-end. {Threader}
-	 
+Begin
+  writeln('Reading the starting maze.');
+  StoreTheMaze(Maze);
+  writeln;
+  writeln('Solution to the maze are:');
+  Explore(Maze, 6, 6); {Start searching from the center.}
+End. {Threader}

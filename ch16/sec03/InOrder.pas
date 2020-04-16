@@ -1,12 +1,14 @@
-procedure InOrder(CurrentWord: WordPOINT);
+Procedure InOrder(CurrentWord : WordPOINT);
 {Prints the nodes of a non-nil alphabetically ordered binary tree in order.}
 
-begin
-   if CurrentWord^.Before <> nil then begin
+Begin
+  If CurrentWord^.Before <> Nil Then
+    Begin
       InOrder(CurrentWord^.Before)
-   end;
-   writeln(CurrentWord^.Word);
-   if CurrentWord^.After <> nil then begin
+    End;
+  writeln(CurrentWord^.Word);
+  If CurrentWord^.After <> Nil Then
+    Begin
       InOrder(CurrentWord^.After)
-   end
-end; {InOrder}
+    End
+End; {InOrder}

@@ -1,16 +1,23 @@
-program Print(input, output);
 
-procedure Echo;
-var TheCharacter :  char;
-   begin
-      read(TheCharacter);
-      write(TheCharacter);
-      if TheCharacter <> '.' then begin Echo end;
-   end; {Echo}
+Program Print(input, output);
 
-begin
-   write('Type in a sentence that ends wit a period.');
-   writeln;
-   Echo;
-   writeln;
-end. {Print}
+Procedure Echo;
+
+Var 
+  TheCharacter :  char;
+
+Begin
+  read(TheCharacter);
+  write(TheCharacter);
+  If TheCharacter <> '.' Then
+    Begin
+      Echo
+    End;
+End; {Echo}
+
+Begin
+  write('Type in a sentence that ends wit a period.');
+  writeln;
+  Echo;
+  writeln;
+End. {Print}

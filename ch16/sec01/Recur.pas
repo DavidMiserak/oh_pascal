@@ -1,18 +1,23 @@
-program Recur(input, output);
+
+Program Recur(input, output);
 {Uses recursion to read a line and echo it in reverse.}
 
-procedure StackTheCharacters;
-var TheCharacter :  char;
-   begin
-      read (TheCharacter);
-      if not eoln then begin
-	 StackTheCharacters; {The recursive call.}
-      end;
-      write(TheCharacter)
-   end; {StackTheCharacters}
+Procedure StackTheCharacters;
 
-begin
-   writeln('Enter a sentence that is not a palindrome.');
-   StackTheCharacters; {The first call.}
-   writeln;
-end. {Recur}
+Var 
+  TheCharacter :  char;
+
+Begin
+  read (TheCharacter);
+  If Not eoln Then
+    Begin
+      StackTheCharacters; {The recursive call.}
+    End;
+  write(TheCharacter)
+End; {StackTheCharacters}
+
+Begin
+  writeln('Enter a sentence that is not a palindrome.');
+  StackTheCharacters; {The first call.}
+  writeln;
+End. {Recur}
